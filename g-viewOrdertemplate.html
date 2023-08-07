@@ -9,18 +9,16 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>PetaGo後台管理系統</title>
+    <title>PEPAGO檢視訂單</title>
 
+    <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
-    <!-- Custom styles for this template -->
+    <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this page -->
-    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -33,38 +31,35 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center mt-4" href="g-orderManager.html">
-                <!-- <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div> -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center mt-4" href="index.html">
                 <div class="sidebar-brand-text mx-3"><img src="./img/back-PetpaGo.svg" alt=""></div>
             </a>
-        
+
             <!-- Nav Item - 訂單管理 -->
             <li class="nav-item">
-                <a class="nav-link text-center" href="g-orderManager.html">
+                <a class="nav-link" href="g-orderManager.html">
                     <i class="fas fa-fw fa-table"></i>
                     <span>訂單管理</span></a>
             </li>
 
             <!-- Nav Item - 旅宿管理 -->
             <li class="nav-item">
-                <a class="nav-link text-center" href="tables.html">
-                    <i class="fas fa-fw fa-home"></i>
+                <a class="nav-link" href="tables.html">
+                    <i class="fas fa-fw fa-table"></i>
                     <span>旅宿管理</span></a>
             </li>
 
             <!-- Nav Item - 會員管理 -->
             <li class="nav-item">
-                <a class="nav-link text-center" href="tables.html">
-                    <i class="fas fa-fw fa-info-circle"></i>
+                <a class="nav-link" href="tables.html">
+                    <i class="fas fa-fw fa-table"></i>
                     <span>會員管理</span></a>
             </li>
 
             <!-- Nav Item - 貼文管理 -->
             <li class="nav-item">
-                <a class="nav-link text-center" href="tables.html">
-                    <i class="fas fa-fw fa-list"></i>
+                <a class="nav-link" href="tables.html">
+                    <i class="fas fa-fw fa-table"></i>
                     <span>貼文管理</span></a>
             </li>
 
@@ -142,15 +137,15 @@
                                 aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    個人資料
+                                    Profile
                                 </a>
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    後台設定
+                                    Settings
                                 </a>
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    修改歷史
+                                    Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
@@ -161,71 +156,101 @@
                         </li>
                     </ul>
                 </nav>
-                    
+
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">訂單管理</h1>
-                    <!-- <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-                        For more information about DataTables, please visit the <a target="_blank"
-                            href="https://datatables.net">official DataTables documentation</a>.</p> -->
-
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
+                    <h1 class="h3 mb-4 text-gray-800">檢視訂單</h1>
+                    <div class="col-12">
+                        <ul class="list-group list-group-horizontal">
+                            <li class="list-group-item list-group-item-secondary h6">訂單編號：OR000001</li>
+                            <li class="list-group-item list-group-item-secondary h6">訂購人會員編號：MB000001</li>
+                            <li class="list-group-item list-group-item-secondary h6">訂單總金額：1,600元</li>
+                        </ul>
+                    </div>
+                    <div class="card shadow mt-4" style="min-height: 20vh;">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">訂單列表</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">詳細資料</h6>
                         </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <div class="cardbody">
+                            <div class="p-3">
+                                <h6 class="font-weight-bold text-black">旅宿資料</h6>
+                            </div>
+                            <div class="table-responsive p-3">
+                                <table class="table table-bordered table-hover" id="orderTable" width="100%"
+                                    cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>訂單編號</th>
-                                            <th>訂購人會員編號</th>
-                                            <th>訂單日期</th>
-                                            <th>查看</th>
-                                            <th>狀態</th>
+                                            <th>旅宿編號</th>
+                                            <th>旅宿名稱</th>
+                                            <th>房型</th>
+                                            <th>數量</th>
+                                            <th>小記</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>訂單編號</th>
-                                            <th>訂購人會員編號</th>
-                                            <th>訂單日期</th>
-                                            <th>查看</th>
-                                            <th>狀態</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
                                         <tr>
-                                            <td>OR000001</td>
-                                            <td>MB000001</td>
-                                            <td>2023-07-01</td>
-                                            <td><i class="fas fa-eye fa-sm"></i></td>
-                                            <td><a href="g-viewOrdertemplate.html">待審核</a></td>
+                                            <td>SH000001</td>
+                                            <td>快樂寵物旅館</td>
+                                            <td>貓套房</td>
+                                            <td>1</td>
+                                            <td>$800</td>
                                         </tr>
+                                    </tbody>
+                                    <tr>
+                                        <td>SH000301</td>
+                                        <td>毛起來住</td>
+                                        <td>狗套房</td>
+                                        <td>1</td>
+                                        <td>$800</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+                        <div class="cardbody">
+                            <div class="p-3">
+                                <h6 class="font-weight-bold text-black">接送資料</h6>
+                            </div>
+                            <div class="table-responsive p-3">
+                                <table class="table table-bordered table-hover" id="tourTable" width="100%"
+                                    cellspacing="0">
+                                    <thead>
                                         <tr>
-                                            <td>OR000002</td>
-                                            <td>MB000002</td>
-                                            <td>2023-07-01</td>
-                                            <td><a href="g-viewOrdertemplate.html"><i class="fas fa-eye fa-sm"></i></a></td>
-                                            <td>已核准</td>
+                                            <th>車型</th>
+                                            <th>迄點</th>
+                                            <th>終點</th>
+                                            <th>里程</th>
+                                            <th>小記</th>
                                         </tr>
+                                    </thead>
+                                    <tbody>
                                         <tr>
-                                            <td>OR000003</td>
-                                            <td>MB000003</td>
-                                            <td>2023-07-01</td>
-                                            <td><a href="#"><i class="fas fa-eye fa-sm"></i></a></td>
-                                            <td>已取消</td>
+                                            <td>轎車</td>
+                                            <td>中和景新街235號</td>
+                                            <td>快樂寵物旅館</td>
+                                            <td>5公里</td>
+                                            <td>$435</td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
+                        <div class="row justify-content-end mb-4">
+                            <div class="col-3 p-5">
+                                <div class="row justify-content-end">
+                                    <div class="flex-grow-1">
+                                         <a href="#" class="btn btn-outline-primary" style="width: 95%;">拒絕</a>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <a href="#" class="btn btn-primary" style="width: 95%;">核准</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
                 <!-- /.container-fluid -->
 
@@ -271,13 +296,6 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
 
 </body>
 
