@@ -167,7 +167,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">訂單管理</h1>
+                    <h1 class="h3 mb-4 text-gray-800">會員管理</h1>
                     <!-- <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
                         For more information about DataTables, please visit the <a target="_blank"
                             href="https://datatables.net">official DataTables documentation</a>.</p> -->
@@ -175,50 +175,42 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">訂單列表</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">會員列表</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>訂單編號</th>
-                                            <th>訂購人會員編號</th>
-                                            <th>訂單日期</th>
-                                            <th>查看</th>
-                                            <th>狀態</th>
+                                            <th>會員編號</th>
+                                            <th>會員姓名</th>
+                                            <th>電子郵箱</th>
+                                            <th>會員狀態</th>
+                                            <th>動作</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>訂單編號</th>
-                                            <th>訂購人會員編號</th>
-                                            <th>訂單日期</th>
-                                            <th>查看</th>
-                                            <th>狀態</th>
+                                            <th>會員編號</th>
+                                            <th>會員姓名</th>
+                                            <th>電子郵箱</th>
+                                            <th>會員狀態</th>
+                                            <th>動作</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                         <tr>
-                                            <td>OR000001</td>
                                             <td>MB000001</td>
-                                            <td>2023-07-01</td>
-                                            <td><i class="fas fa-eye fa-sm"></i></td>
-                                            <td><a href="g-viewOrdertemplate.html">待審核</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>OR000002</td>
-                                            <td>MB000002</td>
-                                            <td>2023-07-01</td>
-                                            <td><a href="g-viewOrdertemplate.html"><i class="fas fa-eye fa-sm"></i></a></td>
-                                            <td>已核准</td>
-                                        </tr>
-                                        <tr>
-                                            <td>OR000003</td>
-                                            <td>MB000003</td>
-                                            <td>2023-07-01</td>
-                                            <td><a href="#"><i class="fas fa-eye fa-sm"></i></a></td>
-                                            <td>已取消</td>
+                                            <td>王緯育</td>
+                                            <td>abc12345@gmail.com</td>
+                                            <td>停權</td>
+                                            <td>
+                                                <select name="action" id="accountAction">
+                                                    <option value="1">正常</option>
+                                                    <option value="2" selected>停權</option>
+                                                    <option value="3">黑名單</option>
+                                                </select>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -242,7 +234,7 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Logout Modal 登出模組-->
+    <!-- Logout Modal 登出燈箱模組-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">

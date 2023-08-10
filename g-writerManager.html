@@ -167,7 +167,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">訂單管理</h1>
+                    <h1 class="h3 mb-4 text-gray-800">貼文管理</h1>
                     <!-- <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
                         For more information about DataTables, please visit the <a target="_blank"
                             href="https://datatables.net">official DataTables documentation</a>.</p> -->
@@ -175,50 +175,52 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">訂單列表</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">貼文審核列表</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>訂單編號</th>
-                                            <th>訂購人會員編號</th>
-                                            <th>訂單日期</th>
-                                            <th>查看</th>
-                                            <th>狀態</th>
+                                            <th>檢舉日期</th>
+                                            <th>檢舉編號</th>
+                                            <th>檢舉者會員編號</th>
+                                            <th>電子郵箱</th>
+                                            <th>貼文張貼日期</th>
+                                            <th>動作</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>訂單編號</th>
-                                            <th>訂購人會員編號</th>
-                                            <th>訂單日期</th>
-                                            <th>查看</th>
-                                            <th>狀態</th>
+                                            <th>檢舉日期</th>
+                                            <th>檢舉編號</th>
+                                            <th>檢舉者會員編號</th>
+                                            <th>電子郵箱</th>
+                                            <th>貼文張貼日期</th>
+                                            <th>動作</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                         <tr>
-                                            <td>OR000001</td>
-                                            <td>MB000001</td>
-                                            <td>2023-07-01</td>
-                                            <td><i class="fas fa-eye fa-sm"></i></td>
-                                            <td><a href="g-viewOrdertemplate.html">待審核</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>OR000002</td>
+                                            <td>2023-01-28</td>
+                                            <td>CK000002</td>
                                             <td>MB000002</td>
-                                            <td>2023-07-01</td>
-                                            <td><a href="g-viewOrdertemplate.html"><i class="fas fa-eye fa-sm"></i></a></td>
-                                            <td>已核准</td>
-                                        </tr>
-                                        <tr>
-                                            <td>OR000003</td>
-                                            <td>MB000003</td>
-                                            <td>2023-07-01</td>
-                                            <td><a href="#"><i class="fas fa-eye fa-sm"></i></a></td>
-                                            <td>已取消</td>
+                                            <td>abc12345@gmail.com</td>
+                                            <td>2023-01-03</td>
+                                            <td>
+                                                <div class="btn-group" role="group">
+                                                    <button type="button" class="btn btn-outline-secondary d-flex align-items-center btn-sm">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-circle-fill mr-1" viewBox="0 0 16 16">
+                                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z"/>
+                                                          </svg>
+                                                        下架</button>
+                                                    <button type="button" class="btn btn-primary d-flex align-items-center btn-sm">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill mr-1" viewBox="0 0 16 16">
+                                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                                                          </svg>
+                                                        復原</button>
+                                                </div>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -242,7 +244,7 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Logout Modal 登出模組-->
+    <!-- Logout Modal 登出燈箱模組-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
