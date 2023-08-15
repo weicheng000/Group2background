@@ -21,7 +21,6 @@
 
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
 </head>
 
 <body id="page-top">
@@ -270,22 +269,21 @@
                                         <div class="col-12">
                                             <h6>旅館環境：</h6>
                                         </div>
-                                        <div class="col-12 row justify-content-center gap-1">
-                                            <div class="col-2">
-                                                <img src="./img/upload.svg" alt="">
+                                        <div class="col-12 row justify-content-center gap-2 imageUp">
+                                            <div class="file-upload img1 shadow-sm" data-input-name="input1" data-unodz-callback="MyObject.foo">
                                             </div>
-                                            <div class="col-2">
-                                                <img src="./img/upload.svg" alt="">
+                                            <div class="file-upload img1 shadow-sm" data-input-name="input2" data-unodz-callback="MyObject.foo">
                                             </div>
-                                            <div class="col-2">
-                                                <img src="./img/upload.svg" alt="">
+                                            <div class="file-upload img1 shadow-sm" data-input-name="input3" data-unodz-callback="MyObject.foo">
                                             </div>
-                                            <div class="col-2">
-                                                <img src="./img/catup.svg" alt="">
+                                            <div class="file-upload img2 shadow-sm" data-input-name="input4" data-unodz-callback="MyObject.foo">
                                             </div>
-                                            <div class="col-2">
-                                                <img src="./img/dogup.svg" alt="">
+                                            <div class="file-upload img3 shadow-sm" data-input-name="input5" data-unodz-callback="MyObject.foo">
                                             </div>
+                                        </div>
+                                        <div >
+                                            <!-- <h4>Call back message:</h4> -->
+                                            <span id="callbackmsg"></span>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -355,10 +353,21 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
+    <script src="js/demo/UnoDropZone.js"></script>
     <script>
+            var MyObject = {
+                foo: function (uplaodCont) {
+                    console.log('calling foo');
+                    console.log('uplaodCont:');
+                    console.log(uplaodCont);
+                    $('#callbackmsg').html('Call MyObject.foo() function at:' + new Date())
+                }
+            };
 
-    </script>
+            $(document).ready(function () {
+                UnoDropZone.init();
+            });
+        </script>
 
 </body>
 
